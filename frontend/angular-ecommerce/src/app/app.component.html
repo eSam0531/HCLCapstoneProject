@@ -14,7 +14,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" media="all">
 
   <!-- Main CSS-->
-  <link href="C:/Users/esmee/HCLCapstoneProject/frontend/angular-ecommerce/src/app/frontend/angular-ecommerce/src/styles.css" rel="stylesheet" media="all">
+  <link
+    href="C:/Users/esmee/HCLCapstoneProject/frontend/angular-ecommerce/src/app/frontend/angular-ecommerce/src/styles.css"
+    rel="stylesheet" media="all">
 
   <link rel="icon" href="assets/images/fav-icon.png">
 </head>
@@ -29,18 +31,9 @@
           <img src="assets/images/logo.png" alt="luv2shop" class="img-responsive">
         </a>
       </div>
-      <div class="menu-sidebar-content js-scrollbar1">
-        <nav class="navbar-sidebar">
-          <ul class="list-unstyled navbar-list">
-            <li>
-              <a routerLink="/category/1" routerLinkActive="active-link">Books</a>
-            </li>
-            <li>
-              <a routerLink="/category/2" routerLinkActive="active-link">Coffee Mugs</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+
+      <app-product-category-menu></app-product-category-menu>
+
     </aside>
     <!-- END MENU SIDEBAR-->
 
@@ -71,7 +64,7 @@
 
       <!-- MAIN CONTENT-->
       <router-outlet></router-outlet>
-     <!-- <app-product-list></app-product-list> -->
+      <!-- <app-product-list></app-product-list> -->
 
 
     </div>
