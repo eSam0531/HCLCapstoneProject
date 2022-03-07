@@ -8,21 +8,19 @@
                     <h3>Customer</h3>
                     <div class="row">
                         <div class="col-md-2"><label>First Name</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <input formControlName="firstName" type="text">
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>Last Name</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <input formControlName="lastName" type="text">
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>Email</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <input formControlName="email" type="text">
                         </div>
                     </div>
@@ -33,39 +31,35 @@
                     <h3>Shipping Address</h3>
                     <div class="row">
                         <div class="col-md-2"><label>Country</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <select formControlName="country">
                                 <option>TODO</option>
                             </select>
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>Street</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <input formControlName="street" type="text">
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>City</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <input formControlName="city" type="text">
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>State</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <select formControlName="state">
                                 <option>TODO</option>
                             </select>
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>Zip Code</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <input formControlName="zipcode" type="text">
                         </div>
                     </div>
@@ -84,39 +78,35 @@
                     <h3>Billing Address</h3>
                     <div class="row">
                         <div class="col-md-2"><label>Country</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <select formControlName="country">
                                 <option>TODO</option>
                             </select>
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>Street</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <input formControlName="street" type="text">
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>City</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <input formControlName="city" type="text">
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>State</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <select formControlName="state">
                                 <option>TODO</option>
                             </select>
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>Zip Code</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <input formControlName="zipcode" type="text">
                         </div>
                     </div>
@@ -127,49 +117,48 @@
                     <h3>Credit Card</h3>
                     <div class="row">
                         <div class="col-md-2"><label>CardType</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <select formControlName="cardType">
                                 <option>VISA</option>
                                 <option>Mastercard</option>
                             </select>
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>Name on Card</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <input formControlName="nameOnCard" type="text">
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>Card Number</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <input formControlName="cardNumber" type="text">
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>Security Code</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <input formControlName="securityCode" type="text">
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>Expiration Month</label></div>
-                        <div class="col-md-9">
+                        <div class="input-space">
                             <select formControlName="expirationMonth">
-                                <option>TODO</option>
+                                <option *ngFor="let month of creditCardMonths">
+                                    {{ month }}
+                                </option>
                             </select>
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-2"><label>Expiration Year</label></div>
-                        <div class="col-md-9">
-                            <select formControlName="expirationYear">
-                                <option>TODO</option>
+                        <div class="input-space">
+                            <select formControlName="expirationYear" (change)="handleMonthAndYears()">
+                                <option *ngFor="let year of creditCardYears">
+                                    {{ year }}
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -188,8 +177,7 @@
                     <button type="submit" class="btn btn-info">Purchase</button>
                 </div>
             </form>
-    
-        </div>
-    </div> 
-</div>
 
+        </div>
+    </div>
+</div>
