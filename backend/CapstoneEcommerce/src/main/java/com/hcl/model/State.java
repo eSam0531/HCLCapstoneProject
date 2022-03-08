@@ -1,21 +1,18 @@
 package com.hcl.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name="state")
-@Data
+@Setter
+@Getter
 public class State {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
@@ -23,7 +20,7 @@ public class State {
 	private String name;
 	
 	@ManyToOne
-	@Column(name="country_id")
+	@JoinColumn(name="country_id")
 	private Country country;
 
 }
