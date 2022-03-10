@@ -1,6 +1,7 @@
 package com.hcl.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,7 @@ public class CheckoutController {
 		this.checkoutService=checkoutService;
 	}
 	
+	@PostMapping("/purchase")
 	public PurchaseResponse placeOrder(@RequestBody Purchase purchase) {
 		PurchaseResponse purchaseResponse = checkoutService.placeOrder(purchase);
 		return purchaseResponse;
