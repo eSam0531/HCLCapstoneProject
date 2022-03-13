@@ -8,4 +8,4 @@ mvnw
 mvnw.cmd
 .mvn/
 starterfiles/
-/config
+/frontend/angular-ecommerce/src/app/config/
