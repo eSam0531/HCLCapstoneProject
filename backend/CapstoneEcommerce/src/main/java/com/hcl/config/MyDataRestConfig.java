@@ -16,6 +16,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 import com.hcl.model.Country;
+import com.hcl.model.Order;
 import com.hcl.model.Product;
 import com.hcl.model.ProductCategory;
 import com.hcl.model.State;
@@ -39,16 +40,12 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 		// array of Http methods that will be unsupported temporarily
 		HttpMethod[] theUnsupportedActions = { HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PATCH };
 
-		// disable HTTP methods for Product: PUT, POST, and DELETE
 		// results in status: 405 Method Not Allowed in postman testing
 		disableHttpMethods(Product.class, config, theUnsupportedActions);
-
-		// disable HTTP methods for ProductCategory: PUT, POST, and DELETE
-		// results in status: 405 Method Not Allowed in postman testing
 		disableHttpMethods(ProductCategory.class,config, theUnsupportedActions);
-		
 		disableHttpMethods(Country.class,config, theUnsupportedActions);
 		disableHttpMethods(State.class,config, theUnsupportedActions);
+		disableHttpMethods(Order.class, config, theUnsupportedActions);
 		
 		// call an internal helper method to expose ids
 		exposeIds(config);
