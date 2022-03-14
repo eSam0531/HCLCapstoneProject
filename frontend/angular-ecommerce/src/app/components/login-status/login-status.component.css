@@ -45,3 +45,9 @@
     -moz-transition:all .5s ease;
     transition:all .5s ease
 }
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
