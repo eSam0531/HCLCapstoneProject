@@ -6,4 +6,5 @@ import com.hcl.model.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long>{
 
+	Customer findByEmail(String theEmail);
 }
