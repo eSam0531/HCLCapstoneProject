@@ -1,0 +1,84 @@
+<div class="section-content section-content-p30 pb-5">
+  <div class="container-fluid">
+    <div class="wallpaper p-5">
+      <div class="container my-4">
+        <div class="row p-3">
+          <div class="col-md-7 my-auto">
+            <h3>upto 35% off</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+              deserunt nostrum accusamus. Nam alias sit necessitatibus, aliquid
+              ex minima at!
+            </p>
+            <a href="#" class="btn btn-primary mt-3">shop now</a>
+          </div>
+          <div class="col-md-5 header-img"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row py-3">
+        <app-product-category-menu></app-product-category-menu>
+      </div>
+      <!-- START LOOP -->
+      <div class="row d-flex justify-content-center">
+        <div
+          *ngFor="let product of products"
+          class="col-lg-2 col-md-3 card d-flex justify-content-center mx-2"
+        >
+          <a routerLink="/products/{{ product.id }}">
+            <img src="{{ product.imageUrl }}" class="img-responsive" />
+          </a>
+
+          <a routerLink="/products/{{ product.id }}">
+            <h6>{{ product.name }}</h6>
+          </a>
+
+          <!-- <h2>{{ product.description }}</h2> -->
+          <div class="price">{{ product.unitPrice | currency: "USD" }}</div>
+          <button (click)="addToCart(product)" class="btn btn-primary btn-sm">
+            Add to cart
+          </button>
+        </div>
+      </div>
+      <!-- END LOOP -->
+
+      <div
+        *ngIf="products?.length == 0"
+        class="alert alert-warning col-md-12"
+        role="alert"
+      >
+        No products found.
+      </div>
+    </div>
+
+    <div class="footer-pagination">
+      <div class="row">
+        <div class="col-md-6"></div>
+
+        <div class="col-md-3">
+          <ngb-pagination
+            [(page)]="thePageNumber"
+            [pageSize]="thePageSize"
+            [collectionSize]="theTotalElements"
+            [maxSize]="5"
+            [boundaryLinks]="true"
+            (pageChange)="listProducts()"
+          ></ngb-pagination>
+        </div>
+
+        <div class="col-md-2" style="text-align: right">
+          <span class="mr-2">Page Size</span>
+          <select (change)="updatePageSize($event)">
+            <option>2</option>
+            <option selected="true">5</option>
+            <option>10</option>
+            <option>20</option>
+            <option>50</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

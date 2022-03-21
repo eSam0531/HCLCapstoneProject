@@ -1,0 +1,116 @@
+<header class="py-2">
+  <div class="navbar">
+    <div class="wrapper container">
+      <div class="logo">
+        <a routerLink="/products">
+          <img
+            src="assets/images/logo.png"
+            alt="Teal Panda"
+            class="img-responsive"
+          />
+        </a>
+      </div>
+
+      <div class="search">
+        <app-search></app-search>
+      </div>
+
+      <div class="items">
+        <div class="item">
+          <app-cart-status></app-cart-status>
+        </div>
+        <div class="item">
+          <app-login-status></app-login-status>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN CONTENT  -->
+<div class="home-container">
+  <router-outlet></router-outlet>
+</div>
+<!-- MAIN CONTENT END -->
+
+<!-- FOOTER STRAT -->
+<footer class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 d-flex flex-column">
+        <h2 class="footer-title mx-4">Our Locations</h2>
+        <ul class="d-flex flex-column justify-content-start">
+          <li class="footer-item">
+            <i class="fa-solid fa-location-dot icon"></i>India
+          </li>
+          <li class="footer-item">
+            <i class="fa-solid fa-location-dot icon"></i>USA
+          </li>
+          <li class="footer-item">
+            <i class="fa-solid fa-location-dot icon"></i>France
+          </li>
+          <li class="footer-item">
+            <i class="fa-solid fa-location-dot icon"></i>Japan
+          </li>
+          <li class="footer-item">
+            <i class="fa-solid fa-location-dot icon"></i>Affrica
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 col-sm-6 d-flex flex-column">
+        <h2 class="footer-title mx-4">Quick Links</h2>
+        <ul class="d-flex flex-column">
+          <li class="footer-item">
+            <i class="fa-solid fa-arrow-right icon"></i>Home
+          </li>
+          <li class="footer-item">
+            <i class="fa-solid fa-arrow-right icon"></i>Featured
+          </li>
+          <li class="footer-item">
+            <i class="fa-solid fa-arrow-right icon"></i>Reviews
+          </li>
+          <li class="footer-item">
+            <i class="fa-solid fa-arrow-right icon"></i>Blog
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 col-sm-6 d-flex flex-column">
+        <h2 class="footer-title mx-4">Resources</h2>
+        <ul class="d-flex flex-column">
+          <li class="footer-item">
+            <i class="fa-solid fa-arrow-right icon"></i>Account Info
+          </li>
+          <li class="footer-item">
+            <i class="fa-solid fa-arrow-right icon"></i>Claims
+          </li>
+          <li class="footer-item">
+            <i class="fa-solid fa-arrow-right icon"></i>Privacy Policy
+          </li>
+          <li class="footer-item">
+            <i class="fa-solid fa-arrow-right icon"></i>Payment Methods
+          </li>
+          <li class="footer-item">
+            <i class="fa-solid fa-arrow-right icon"></i>Our Services
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 col-sm-6 d-flex flex-column">
+        <h2 class="footer-title mx-4">Contact Us</h2>
+        <ul class="d-flex flex-column">
+          <li class="footer-item">
+            <i class="fa-solid fa-phone-flip icon"></i> 1 800 223 2424
+          </li>
+          <li class="footer-item">
+            <i class="fa-solid fa-phone-flip icon"></i> 1 800 773 2024
+          </li>
+          <li class="footer-item">
+            <i class="fa-solid fa-envelope icon"></i> support@tealpanda.com
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

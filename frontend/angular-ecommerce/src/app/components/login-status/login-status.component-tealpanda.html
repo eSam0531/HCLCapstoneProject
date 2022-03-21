@@ -1,0 +1,51 @@
+<div>
+  <i class="fas fa-user-circle icon" (click)="toggleUserMenu()"> </i>
+
+  <div class="login-box" [ngClass]="menuStatus ? 'active' : ''">
+    <div *ngIf="isAuthenticated && userFullName" class="top">
+      Signed in as <br />
+      {{ userFullName }}
+    </div>
+
+    <div class="nav">
+      <button
+        *ngIf="!isAuthenticated"
+        routerLink="/login"
+        class="menu-login-btn mt-2"
+        (click)="toggleUserMenu()"
+      >
+        Login
+      </button>
+
+      <button
+        routerLink="/order-history"
+        *ngIf="isAuthenticated"
+        class="menu-login-btn mt-2"
+        (click)="toggleUserMenu()"
+      >
+        Orders
+      </button>
+
+      <button
+        routerLink="/members"
+        *ngIf="isAuthenticated"
+        class="menu-login-btn mt-2"
+        (click)="toggleUserMenu()"
+      >
+        Members
+      </button>
+      <hr class="divider" />
+      <button
+        *ngIf="isAuthenticated"
+        (click)="logout()"
+        class="menu-login-btn mt-2"
+        (click)="toggleUserMenu()"
+      >
+        Logout
+      </button>
+    </div>
+    <!-- <div *ngIf="isAuthenticated && userFullName" class="login-status-user-info">
+      Welcome back {{ userFullName }}!
+    </div> -->
+  </div>
+</div>

@@ -1,0 +1,36 @@
+/* CREATE ARROW NAVBAR */
+.checkout-menu {
+  width: 100%;
+}
+
+.arrow-container {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  color: #fff;
+}
+
+.arrow_box {
+  position: relative;
+  background: #88b7d5;
+  height: 30px;
+  transform: skew(20deg);
+  background: #888;
+  margin-right: 3px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.divider {
+  border: 1px solid #ccc;
+}
+
+.next-btn {
+  position: relative;
+  float: right;
+  width: 200px;
+}
+
+.tab-green {
+  background-color: green;
+}

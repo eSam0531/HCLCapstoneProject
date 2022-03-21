@@ -1,0 +1,15 @@
+<!-- <div class="cart-comp d-n">
+  <a routerLink="/cart-details">
+    <div class="total">
+      {{ totalPrice | currency: "USD" }} <span> {{ totalQuantity }}</span>
+    </div>
+    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+  </a>
+</div> -->
+
+<div class="item">
+  <a routerLink="/cart-details">
+    <i class="fa-solid fa-cart-shopping icon"></i>
+    <div class="counter">{{ totalQuantity }}</div>
+  </a>
+</div>

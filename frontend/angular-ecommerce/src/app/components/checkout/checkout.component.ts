@@ -13,8 +13,8 @@ import { CustomValidators } from 'src/app/validators/custom-validators';
 
 @Component({
   selector: 'app-checkout',
-  templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.css']
+  templateUrl: './checkout.component-tealpanda.html',
+  styleUrls: ['./checkout.component-tealpanda.css']
 })
 export class CheckoutComponent implements OnInit {
 
@@ -29,6 +29,12 @@ export class CheckoutComponent implements OnInit {
   countries: Country[] = [];
   shippingAddressStates: State[] = [];
   billingAddressStates: State[] = [];
+
+  // FORM STATUS
+  customer_status: boolean = false;
+  shipping_status: boolean = false;
+  billing_status: boolean = false;
+  credit_status: boolean = false;
 
   storage: Storage = sessionStorage;
 
@@ -194,18 +200,18 @@ export class CheckoutComponent implements OnInit {
   get shippingAddressCity() {return this.checkoutFormGroup.get('shippingAddress.city');}
   get shippingAddressState() {return this.checkoutFormGroup.get('shippingAddress.state');}
   get shippingAddressCountry() {return this.checkoutFormGroup.get('shippingAddress.country');}
-  get shippingAddressZipcode() {return this.checkoutFormGroup.get('shippingAddress.zipcode');}
+  get shippingAddressZipCode() {return this.checkoutFormGroup.get('shippingAddress.zipcode');}
 
   get billingAddressStreet() {return this.checkoutFormGroup.get('billingAddress.street');}
   get billingAddressCity() {return this.checkoutFormGroup.get('billingAddress.city');}
   get billingAddressState() {return this.checkoutFormGroup.get('billingAddress.state');}
   get billingAddressCountry() {return this.checkoutFormGroup.get('billingAddress.country');}
-  get billingAddressZipcode() {return this.checkoutFormGroup.get('billingAddress.zipcode');}
+  get billingAddressZipCode() {return this.checkoutFormGroup.get('billingAddress.zipcode');}
 
-  get cardType() {return this.checkoutFormGroup.get('creditCard.cardType');}
-  get nameOnCard() {return this.checkoutFormGroup.get('creditCard.nameOnCard');}
-  get cardNumber() {return this.checkoutFormGroup.get('creditCard.cardNumber');}
-  get securityCode() {return this.checkoutFormGroup.get('creditCard.securityCode');}
+  get creditCardType() {return this.checkoutFormGroup.get('creditCard.cardType');}
+  get creditCardNameOnCard() {return this.checkoutFormGroup.get('creditCard.nameOnCard');}
+  get creditCardNumber() {return this.checkoutFormGroup.get('creditCard.cardNumber');}
+  get creditCardSecurityCode() {return this.checkoutFormGroup.get('creditCard.securityCode');}
 
   resetCart() {
     //rest cart data
@@ -279,5 +285,53 @@ export class CheckoutComponent implements OnInit {
       formGroup.get('state').setValue(data[0]);
     });
   }
+
+   // Change Tab
+   activeTab: number = 1;
+   changeTab(tab: number) {
+     if (
+       tab === 2 &&
+       this.firstName.value !== '' &&
+       this.lastName.value !== '' &&
+       this.email.value !== ''
+     ) {
+       this.activeTab = tab;
+       this.customer_status = true;
+     } else if (
+       tab === 3 &&
+       this.shippingAddressStreet.value !== '' &&
+       this.shippingAddressCity.value !== '' &&
+       this.shippingAddressCountry.value.name !== '' &&
+       this.shippingAddressZipCode.value !== '' &&
+       this.shippingAddressState.value.name !== ''
+     ) {
+       if (this.billingAddressCity.value !== '') {
+         this.activeTab = tab + 1;
+         this.shipping_status = true;
+         this.billing_status = true;
+         return;
+       }
+       this.activeTab = tab;
+       this.shipping_status = true;
+     } else if (
+       tab === 4 &&
+       this.billingAddressStreet.value !== '' &&
+       this.billingAddressCity.value !== '' &&
+       this.billingAddressCountry.value.name !== '' &&
+       this.billingAddressZipCode.value !== '' &&
+       this.billingAddressState.value.name !== ''
+     ) {
+       this.activeTab = tab;
+       this.billing_status = true;
+     } else if (
+       tab === 5 &&
+       this.creditCardType.value !== '' &&
+       this.creditCardNameOnCard.value !== '' &&
+       this.creditCardNumber.value !== ''
+     ) {
+       this.activeTab = tab;
+       this.credit_status = true;
+     }
+   }
 
 }

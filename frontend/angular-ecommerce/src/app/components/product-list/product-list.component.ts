@@ -9,8 +9,9 @@ import { ProductService } from 'src/app/services/product.service';
   selector: 'app-product-list',
   //templateUrl: './product-list.component.html',
   //templateUrl: './product-list-table.component.html',
-  templateUrl: './product-list-grid.component.html',
-  styleUrls: ['./product-list.component.css']
+  //templateUrl: './product-list-grid.component.html',
+  templateUrl: './product-list.component-tealpanda.html',
+  styleUrls: ['./product-list.component-tealpanda.css']
 })
 export class ProductListComponent implements OnInit {
 

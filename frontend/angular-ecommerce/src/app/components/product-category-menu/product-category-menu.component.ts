@@ -4,8 +4,8 @@ import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-category-menu',
-  templateUrl: './product-category-menu.component.html',
-  styleUrls: ['./product-category-menu.component.css']
+  templateUrl: './product-category-menu.component-tealpanda.html',
+  styleUrls: ['./product-category-menu.component-tealpanda.css']
 })
 export class ProductCategoryMenuComponent implements OnInit {
 

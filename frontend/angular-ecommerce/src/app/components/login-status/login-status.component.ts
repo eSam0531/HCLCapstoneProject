@@ -5,13 +5,15 @@ import { OktaAuth } from '@okta/okta-auth-js';
 
 @Component({
   selector: 'app-login-status',
-  templateUrl: './login-status.component.html',
-  styleUrls: ['./login-status.component.css']
+  templateUrl: './login-status.component-tealpanda.html',
+  styleUrls: ['./login-status.component-tealpanda.css']
 })
 export class LoginStatusComponent implements OnInit {
 
   isAuthenticated: boolean = false;
   userFullName: string;
+
+  menuStatus: boolean = false;
 
   storage: Storage = sessionStorage;
 
@@ -47,5 +49,10 @@ export class LoginStatusComponent implements OnInit {
   logout() {
     //terminates the session with Okta and removes current tokens.
     this._oktaAuth.signOut();
+  }
+
+  toggleUserMenu() {
+    this.menuStatus = !this.menuStatus;
+    console.log('USER MENU', this.menuStatus);
   }
 }

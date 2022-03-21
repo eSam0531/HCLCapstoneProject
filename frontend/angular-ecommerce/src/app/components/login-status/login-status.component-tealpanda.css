@@ -1,0 +1,94 @@
+.icon {
+  font-size: 20px;
+  color: #444;
+}
+
+.icon:hover {
+  cursor: pointer;
+  color: lightgray;
+}
+
+.icon:hover ~ .login-box {
+  display: block;
+}
+
+.login-box.active {
+  display: block;
+}
+
+.login-box {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  width: 200px;
+  background-color: #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: none;
+  z-index: 100;
+}
+
+.menu-login-btn {
+  border-radius: 5px;
+  font-size: 0.9rem;
+  background-color: teal;
+  width: 150px;
+  color: #fff;
+  height: 30px;
+}
+
+.menu-login-btn:hover {
+  background-color: blue;
+}
+
+.security-btn {
+  position: relative;
+  width: 100%;
+  color: #fff;
+  border: 10px solid #205b8d;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 43px;
+  background: #205b8d;
+}
+
+.login-status-user-info {
+  line-height: 43px;
+  border: 1px;
+  padding: 0 17px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.login-status-header .fas {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login-status-header .fas:hover {
+  color: #8ebad3;
+}
+
+.login-box .top {
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.login-box .nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  border: 1px solid #fff;
+  width: 100%;
+}

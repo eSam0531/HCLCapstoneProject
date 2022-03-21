@@ -1,0 +1,10 @@
+<div class="search">
+  <form action=""></form>
+  <input
+    #myInput
+    type="text"
+    placeholder="Search for products ..."
+    (keyup.enter)="doSearch(myInput.value)"
+  />
+  <i class="fa-solid fa-magnifying-glass" (click)="doSearch(myInput.value)"></i>
+</div>

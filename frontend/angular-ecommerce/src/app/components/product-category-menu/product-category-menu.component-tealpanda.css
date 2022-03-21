@@ -1,0 +1,16 @@
+.option-nav {
+  display: flex;
+  list-style: none;
+}
+
+.option-nav li {
+  margin-right: 15px;
+}
+
+.option-nav li a {
+  color: #444;
+}
+
+.option-nav li a:hover {
+  color: #0d6efd;
+}

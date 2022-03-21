@@ -3,8 +3,8 @@ import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-cart-status',
-  templateUrl: './cart-status.component.html',
-  styleUrls: ['./cart-status.component.css']
+  templateUrl: './cart-status.component-tealpanda.html',
+  styleUrls: ['./cart-status.component-tealpanda.css']
 })
 export class CartStatusComponent implements OnInit {
 
