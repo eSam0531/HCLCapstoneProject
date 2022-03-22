@@ -5,5 +5,3 @@ this repo hold the files created for the HCL Capstone project built during fulls
  3. Shopping cart check out
  4. User login/logout security
  5. Track previous order for logged in users
-
-note: application.properties in backend and config properties in front end are not commited to protect security of application.
