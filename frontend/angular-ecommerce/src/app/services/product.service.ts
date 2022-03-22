@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Product } from '../common/product';
 import { ProductCategory } from '../common/product-category';
 
@@ -10,9 +11,9 @@ import { ProductCategory } from '../common/product-category';
 })
 export class ProductService {
 
-  private baseUrl = 'http://localhost:8080/api/products';
+  private baseUrl = environment.apiUrl + '/products';
 
-  private categoryUrl = 'http://localhost:8080/api/product-category';
+  private categoryUrl = environment.apiUrl + '/product-category';
 
   constructor(private httpClient: HttpClient) { }
 

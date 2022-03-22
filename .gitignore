@@ -8,5 +8,4 @@ mvnw
 mvnw.cmd
 .mvn/
 starterfiles/
-/frontend/angular-ecommerce/src/app/config/
-/backend/CapstoneEcommerce/src/main/resources/
+
