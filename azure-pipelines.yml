@@ -9,7 +9,7 @@ trigger:
       - main
   paths:
     include:
-      -backend/CapstoneEcommerce
+      - backend/CapstoneEcommerce
 
 pool:
   vmImage: ubuntu-latest
