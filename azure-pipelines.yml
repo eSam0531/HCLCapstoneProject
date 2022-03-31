@@ -4,7 +4,12 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- main
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      -backend/CapstoneEcommerce
 
 pool:
   vmImage: ubuntu-latest
@@ -12,6 +17,8 @@ pool:
 steps:
 - task: Maven@3
   inputs:
+    script: |
+      cd backend/CapstoneEcommerce
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
