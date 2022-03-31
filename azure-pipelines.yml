@@ -17,9 +17,7 @@ pool:
 steps:
 - task: Maven@3
   inputs:
-    script: |
-      cd backend/CapstoneEcommerce
-    mavenPomFile: 'pom.xml'
+    mavenPomFile: 'backend/CapstoneEcommercepom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
