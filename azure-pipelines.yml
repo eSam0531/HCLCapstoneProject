@@ -34,3 +34,7 @@ steps:
       jdkArchitectureOption: 'x64'
       publishJUnitResults: true
       sqAnalysisEnabled: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      codeCoverageToolOption: JaCoCo
+      isJacocoCoverageReportXML: true
+      
