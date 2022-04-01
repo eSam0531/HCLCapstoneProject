@@ -38,7 +38,5 @@ steps:
   - task: PublishCodeCoverageResults@1
     inputs:
       codeCoverageTool: 'JaCoCo'
-      summaryFileLocation: '$(System.DefaultWorkingDirectory)/target/site/jacoco/jacoco.xml'
-      pathToSources: '$(System.DefaultWorkingDirectory)/backend/CapstoneEcommerce/src/main/java/'
-      testResultsFiles: '**/surefire-reports/TEST-*.xml'
-      goals: 'package'
+      summaryFileLocation: '$(Agent.TempDirectory)/target/site/jacoco/jacoco.xml'
+      
