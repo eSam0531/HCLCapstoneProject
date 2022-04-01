@@ -34,9 +34,3 @@ steps:
       jdkArchitectureOption: 'x64'
       publishJUnitResults: true
       sqAnalysisEnabled: true
-      
-  - task: PublishCodeCoverageResults@1
-    inputs:
-      codeCoverageTool: 'JaCoCo'
-      summaryFileLocation: '$(System.DefaultWorkingDirectory)/backend/CapstoneEcommerce/target/site/jacoco/jacoco.xml'
-      
