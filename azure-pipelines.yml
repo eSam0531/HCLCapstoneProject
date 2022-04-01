@@ -38,5 +38,5 @@ steps:
   - task: PublishCodeCoverageResults@1
     inputs:
       codeCoverageTool: 'JaCoCo'
-      summaryFileLocation: '**/target/site/jacoco/jacoco.xml'
+      summaryFileLocation: '$(System.DefaultWorkingDirectory)/backend/CapstoneEcommerce/target/site/jacoco/jacoco.xml'
       
