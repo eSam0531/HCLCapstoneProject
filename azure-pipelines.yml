@@ -40,5 +40,5 @@ steps:
       codeCoverageTool: 'JaCoCo'
       summaryFileLocation: '$(System.DefaultWorkingDirectory)/target/site/jacoco/jacoco.xml'
       pathToSources: '$(System.DefaultWorkingDirectory)/backend/CapstoneEcommerce/src/main/java/'
-        testResultsFiles: '**/surefire-reports/TEST-*.xml'
-        goals: 'package'
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      goals: 'package'
