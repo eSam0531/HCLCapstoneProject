@@ -51,6 +51,9 @@ stages:
       displayName: 'Maven Package'
       inputs:
         mavenPomFile: 'backend/CapstoneEcommerce/pom.xml'
+        javaHomeOption: 'JDKVersion'
+        jdkVersionOption: '11'
+        jdkArchitectureOption: 'x64'
         publishJUnitResults: true
         sqAnalysisEnabled: true
         codeCoverageToolOption: JaCoCo
