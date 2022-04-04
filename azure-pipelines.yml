@@ -38,4 +38,11 @@ steps:
       isJacocoCoverageReportXML: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
-      
+  - task: AzureRmWebAppDeployment@4
+    inputs:
+      ConnectionType: 'AzureRM'
+      azureSubscription: 'Azure for Students(e1570a05-4ec6-4991-98c9-22442f138dac)'
+      appType: 'webAppLinux'
+      WebAppName: 'capstonetestdeploy'
+      packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+      RuntimeStack: 'JAVA|11-java11'
