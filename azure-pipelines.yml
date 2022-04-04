@@ -38,6 +38,8 @@ steps:
       isJacocoCoverageReportXML: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
+  - task: PublishBuildArtifacts@1
+
   - task: AzureRmWebAppDeployment@4
     inputs:
       ConnectionType: 'AzureRM'
