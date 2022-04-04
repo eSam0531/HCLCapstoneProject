@@ -38,7 +38,11 @@ steps:
       isJacocoCoverageReportXML: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
-  - task: PublishBuildArtifacts@1
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: '$(Pipeline.Workspace)'
+      artifactType: 'pipeline'
 
   - task: AzureRmWebAppDeployment@4
     inputs:
